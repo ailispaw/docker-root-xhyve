@@ -1,0 +1,6 @@
+.DS_Store
+
+uuid2mac/build/
+bin/uuid2mac
+vm/*
+!vm/Makefile
