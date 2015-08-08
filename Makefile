@@ -29,14 +29,14 @@ ip:
 
 ssh:
 	@expect -c ' \
-		spawn ssh $(USERNAME)@'$(IP_ADDR)' $(SSH_ARGS) $(filter-out $@,$(MAKECMDGOALS)); \
+		spawn -noecho ssh $(USERNAME)@'$(IP_ADDR)' $(SSH_ARGS) $(filter-out $@,$(MAKECMDGOALS)); \
 		expect "(yes/no)?" { send "yes\r"; exp_continue; } "password:" { send "$(PASSWORD)\r"; }; \
 		interact; \
 	'
 
 halt:
 	@expect -c ' \
-		spawn ssh $(USERNAME)@'$(IP_ADDR)' $(SSH_ARGS) sudo halt; \
+		spawn -noecho ssh $(USERNAME)@'$(IP_ADDR)' $(SSH_ARGS) sudo halt; \
 		expect "(yes/no)?" { send "yes\r"; exp_continue; } "password:" { send "$(PASSWORD)\r"; }; \
 		interact; \
 	'
