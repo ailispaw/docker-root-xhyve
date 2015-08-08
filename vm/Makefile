@@ -48,7 +48,7 @@ ssh_args:
 
 clean:
 	$(RM) $(KERNEL) $(INITRD) $(HDD)
-	$(RM) docker-root-data.tar.gz
+	$(RM) docker-root.iso docker-root-data.tar.gz
 	$(RM) .mac_address
 
 .PHONY: all xhyve_uuid xhyve_kernel xhyve_cmdline xhyve_hdd \
