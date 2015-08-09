@@ -22,7 +22,7 @@ $ sudo ./xhyverun.sh
 DockerRoot: docker-root /dev/ttyS0
 docker-root login: docker
 Password: 
-DockerRoot version 0.9.5, Docker version 1.7.1, build 786b29d
+DockerRoot version 0.9.6, Docker version 1.7.1, build 786b29d
 [docker@docker-root ~]$ wget https://raw.githubusercontent.com/ailispaw/docker-root-xhyve/master/contrib/makehdd/makehdd.sh
 [docker@docker-root ~]$ chmod +x makehdd.sh
 [docker@docker-root ~]$ sudo ./makehdd.sh
@@ -39,8 +39,8 @@ Units = cylinders of 2048 * 512 = 1048576 bytes
 Partition table entries are not in disk order
 [docker@docker-root ~]$ ls -l /mnt/vda1/var/lib/docker-root
 total 8
--rw-r--r--    1 root     root           206 Aug  7 21:23 profile
--rwxr-xr-x    1 root     root           215 Aug  7 21:23 start.sh*
+-rw-r--r--    1 root     root            47 Aug  9 20:58 profile
+-rwxr-xr-x    1 root     root           215 Aug  9 20:58 start.sh*
 [docker@docker-root ~]$ sudo halt
 halt[263]: halt
 [docker@docker-root ~]$ reboot: System halted
