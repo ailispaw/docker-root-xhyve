@@ -5,8 +5,8 @@ License: BSD as well as [xhybe](https://github.com/mist64/xhyve)
 config.mk and uuid.h are from xhybe and most of main.c is from xhyve, too.
 
 ```
-$ git clone https://github.com/ailispaw/rancheros-lite-xhyve
-$ cd rancheros-lite-xhyve
+$ git clone https://github.com/ailispaw/docker-root-xhyve
+$ cd docker-root-xhyve
 $ make uuid2ip
 /Library/Developer/CommandLineTools/usr/bin/make -C uuid2ip
 cc main.c

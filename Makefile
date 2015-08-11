@@ -1,4 +1,4 @@
-all: vm bin/uuid2mac
+all: vm uuid2mac
 
 vm:
 	$(MAKE) -C vm
@@ -68,6 +68,8 @@ exports-clean:
 
 .PHONY: exports exports-clean
 
+uuid2mac: bin/uuid2mac
+
 bin/uuid2mac:
 	$(MAKE) -C uuid2mac
 	@install -CSv uuid2mac/build/uuid2mac bin/
@@ -76,4 +78,4 @@ uuid2mac-clean:
 	$(MAKE) -C uuid2mac clean
 	$(RM) bin/uuid2mac
 
-.PHONY: uuid2mac-clean
+.PHONY: uuid2mac uuid2mac-clean
