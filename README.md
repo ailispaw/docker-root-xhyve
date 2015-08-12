@@ -71,7 +71,7 @@ docker-root login:
 
 ```
 $ make ssh
-DockerRoot version 0.9.6, Docker version 1.7.1, build 786b29d
+DockerRoot version 0.9.7, Docker version 1.8.0, build 0d03096
 [docker@docker-root ~]$ 
 ```
 
@@ -106,15 +106,15 @@ Storage Driver: overlay
 Execution Driver: native-0.2
 Logging Driver: json-file
 Kernel Version: 4.0.9-docker-root
-Operating System: DockerRoot v0.9.6
+Operating System: DockerRoot v0.9.7
 CPUs: 1
 Total Memory: 998.8 MiB
 Name: docker-root
-ID: NNA3:RZXY:L4IS:BUGY:ACR7:A3FG:EECH:QYN5:KI5W:3WVU:EPQM:FPDG
+ID: QRTO:IRHN:AZAD:QZZX:EUI2:XMT5:S4XQ:DEDP:ATN2:G2K2:7P5E:ECOU
 Debug mode (server): true
-File Descriptors: 10
-Goroutines: 15
-System Time: 2015-08-09T21:01:56.505715062Z
+File Descriptors: 13
+Goroutines: 16
+System Time: 2015-08-12T07:25:02.275483594Z
 EventsListeners: 0
 Init SHA1:
 Init Path: /bin/docker
