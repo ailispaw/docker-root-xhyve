@@ -22,7 +22,7 @@ $ sudo ./xhyverun.sh
 DockerRoot: docker-root /dev/ttyS0
 docker-root login: docker
 Password: 
-DockerRoot version 0.9.8, Docker version 1.8.1, build d12ea79
+DockerRoot version 0.9.9, Docker version 1.8.1, build d12ea79
 [docker@docker-root ~]$ wget https://raw.githubusercontent.com/ailispaw/docker-root-xhyve/master/contrib/makehdd/makehdd.sh
 [docker@docker-root ~]$ chmod +x makehdd.sh
 [docker@docker-root ~]$ sudo ./makehdd.sh
