@@ -17,7 +17,7 @@ $ dd if=/dev/zero bs=1g count=4 >> vm/docker-root-data.img
 $ make run
 Booting up...
 $ make ssh
-DockerRoot version 0.10.1, Docker version 1.8.1, build d12ea79
+DockerRoot version 0.10.2, Docker version 1.8.1, build d12ea79
 [docker@docker-root ~]$ (echo d; echo 1; echo n; echo p; echo 1; echo; echo; echo w) | sudo fdisk /dev/vda
 [docker@docker-root ~]$ sudo reboot
 reboot[275]: reboot
@@ -28,7 +28,7 @@ Connection to 192.168.64.2 closed by remote host.
 
 ```
 $ make ssh
-DockerRoot version 0.10.1, Docker version 1.8.1, build d12ea79
+DockerRoot version 0.10.2, Docker version 1.8.1, build d12ea79
 [docker@docker-root ~]$ sudo resize2fs /dev/vda1
 resize2fs 1.42.12 (29-Aug-2014)
 Filesystem at /dev/vda1 is mounted on /mnt/vda1; on-line resizing required
