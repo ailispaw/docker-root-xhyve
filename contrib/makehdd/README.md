@@ -19,10 +19,10 @@ $ dd if=/dev/zero of=vm/docker-root-data.img bs=1g count=4
 ```
 $ sudo ./xhyverun.sh
 
-DockerRoot: docker-root /dev/ttyS0
+Welcome to DockerRoot docker-root /dev/ttyS0
 docker-root login: docker
 Password: 
-DockerRoot version 0.10.3, Docker version 1.8.1, build d12ea79
+Welcome to DockerRoot version 0.11.0, Docker version 1.8.1, build d12ea79
 [docker@docker-root ~]$ wget https://raw.githubusercontent.com/ailispaw/docker-root-xhyve/master/contrib/makehdd/makehdd.sh
 [docker@docker-root ~]$ chmod +x makehdd.sh
 [docker@docker-root ~]$ sudo ./makehdd.sh
@@ -42,7 +42,9 @@ total 8
 -rw-r--r--    1 root     root            47 Aug  9 20:58 profile
 -rwxr-xr-x    1 root     root           215 Aug  9 20:58 start.sh*
 [docker@docker-root ~]$ sudo halt
-halt[263]: halt
+halt[247]: Executing shutdown scripts in /etc/init.d
+Saving random seed... done.
+halt[247]: halt
 [docker@docker-root ~]$ reboot: System halted
 ```
 
