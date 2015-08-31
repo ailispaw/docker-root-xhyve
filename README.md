@@ -38,7 +38,7 @@ $ brew install xhyve
 ```
 $ git clone https://github.com/ailispaw/docker-root-xhyve
 $ cd docker-root-xhyve
-$ make
+$ make init
 ```
 
 ## Booting Up
@@ -53,7 +53,7 @@ docker-root login:
 or
 
 ```
-$ make run
+$ make up
 Booting up...
 ```
 
@@ -72,6 +72,8 @@ docker-root login:
 
 ```
 $ make ssh
+docker-root-xhyve: running on 192.168.64.2
+docker@192.168.64.2's password: 
 Welcome to DockerRoot version 0.11.0, Docker version 1.8.1, build d12ea79
 [docker@docker-root ~]$ 
 ```
@@ -93,6 +95,8 @@ or
 
 ```
 $ make halt
+docker-root-xhyve: running on 192.168.64.2
+docker@192.168.64.2's password: 
 halt[247]: Executing shutdown scripts in /etc/init.d
 Saving random seed... done.
 halt[247]: halt
@@ -104,6 +108,7 @@ Shutting down...
 
 ```
 $ docker -H `make ip`:2375 info
+docker-root-xhyve: running on 192.168.64.2
 Containers: 0
 Images: 0
 Storage Driver: overlay

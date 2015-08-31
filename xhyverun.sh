@@ -38,5 +38,6 @@ while [ 1 ]; do
 done
 
 make exports-clean
+rm -f vm/.mac_address
 
 exit 0
