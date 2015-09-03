@@ -1,8 +1,12 @@
 # DockerRoot running on xhyve hypervisor
 
+This is a toolbox to run [DockerRoot](https://github.com/ailispaw/docker-root) on xhyve hypervisor easily.
+
+For VirtualBox or QEMU, see https://github.com/ailispaw/docker-root-packer.
+
 ## Features
 
-- DockerRoot
+- [DockerRoot](https://github.com/ailispaw/docker-root)
 - Disable TLS
 - Expose the official IANA registered Docker port 2375
 - Support NFS synced folder at /Users
@@ -16,7 +20,7 @@
 ## Caution
 
 - **Kernel Panic** will occur on booting, once VirtualBox (< v5.0) has run before.
-- Pay attention to exposing the port 2375 without TLS, as you see the features.
+- Pay attention to **exposing the port 2375 without TLS**, as you see the features.
 
 ## Installing xhyve
 
