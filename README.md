@@ -111,8 +111,14 @@ Shutting down...
 ## Using Docker
 
 ```
-$ docker -H `make ip`:2375 info
+$ make env
 docker-root-xhyve: running on 192.168.64.2
+export DOCKER_HOST=tcp://192.168.64.2:2375;
+unset DOCKER_CERT_PATH;
+unset DOCKER_TLS_VERIFY;
+$ eval $(make env)
+docker-root-xhyve: running on 192.168.64.2
+$ docker info
 Containers: 0
 Images: 0
 Storage Driver: overlay
@@ -128,7 +134,7 @@ ID: 3V5X:TTHP:ESCB:WLH3:2DWF:MZBC:2OGR:RNUZ:CLOO:3SPS:XQNQ:7WLQ
 Debug mode (server): true
 File Descriptors: 13
 Goroutines: 16
-System Time: 2015-09-01T03:08:53.618810791Z
+System Time: 2015-09-04T00:58:59.654540804Z
 EventsListeners: 0
 Init SHA1:
 Init Path: /bin/docker
