@@ -19,7 +19,7 @@ Booting up...
 $ make ssh
 docker-root-xhyve: running on 192.168.64.2
 docker@192.168.64.2's password: 
-Welcome to DockerRoot version 1.0.1, Docker version 1.8.1, build d12ea79
+Welcome to DockerRoot version 1.0.2, Docker version 1.8.2, build 0a8c2e3
 [docker@docker-root ~]$ (echo d; echo 1; echo n; echo p; echo 1; echo; echo; echo w) | sudo fdisk /dev/vda
 [docker@docker-root ~]$ sudo reboot
 reboot[264]: Executing shutdown scripts in /etc/init.d
@@ -34,12 +34,12 @@ Connection to 192.168.64.2 closed by remote host.
 $ make ssh
 docker-root-xhyve: running on 192.168.64.2
 docker@192.168.64.2's password: 
-Welcome to DockerRoot version 1.0.1, Docker version 1.8.1, build d12ea79
+Welcome to DockerRoot version 1.0.2, Docker version 1.8.2, build 0a8c2e3
 [docker@docker-root ~]$ sudo resize2fs /dev/vda1
-resize2fs 1.42.12 (29-Aug-2014)
+resize2fs 1.42.13 (17-May-2015)
 Filesystem at /dev/vda1 is mounted on /mnt/vda1; on-line resizing required
 old_desc_blocks = 1, new_desc_blocks = 1
-The filesystem on /dev/vda1 is now 1849483 (4k) blocks long.
+The filesystem on /dev/vda1 is now 1852672 (4k) blocks long.
 
 ```
 
