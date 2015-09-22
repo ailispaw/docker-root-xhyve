@@ -26,16 +26,16 @@ xhyve_uuid:
 	@echo $(UUID)
 
 xhyve_kernel:
-	@echo `pwd`/$(KERNEL)
+	@echo $(CURDIR)/$(KERNEL)
 
 xhyve_initrd:
-	@echo `pwd`/$(INITRD)
+	@echo $(CURDIR)/$(INITRD)
 
 xhyve_cmdline:
 	@echo $(CMDLINE)
 
 xhyve_hdd:
-	@echo `pwd`/$(HDD)
+	@echo $(CURDIR)/$(HDD)
 
 username:
 	@echo $(USERNAME)
