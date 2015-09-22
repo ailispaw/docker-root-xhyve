@@ -20,7 +20,7 @@ $(HDD): docker-root-data.tar.gz
 	tar zxmvf $<
 
 docker-root-data.tar.gz:
-	curl -OL https://github.com/ailispaw/docker-root-xhyve/releases/download/v1.0.0/$@
+	curl -OL https://github.com/ailispaw/docker-root-xhyve/releases/download/v1.1.0/$@
 
 xhyve_uuid:
 	@echo $(UUID)

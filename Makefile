@@ -3,7 +3,7 @@ init: vm uuid2mac
 vm:
 	@$(MAKE) -sC vm
 
-clean destroy: exports-clean uuid2mac-clean
+clean destroy: uuid2mac-clean
 	$(MAKE) -C vm clean
 
 .PHONY: init vm clean destroy
@@ -76,36 +76,6 @@ status:
 #
 # Helpers
 #
-
-EXPORTS = $(shell bin/vmnet_export.sh)
-
-exports:
-	@if [ -n "$(EXPORTS)" ]; then \
-		set -e; \
-		sudo touch /etc/exports; \
-		if ! grep -qs '^$(EXPORTS)$$' /etc/exports; then \
-			echo '$(EXPORTS)' | sudo tee -a /etc/exports; \
-		fi; \
-		sudo nfsd checkexports || (echo "Please check your /etc/exports." >&2 && exit 1); \
-		sudo nfsd stop; \
-		sudo nfsd start; \
-		while ! rpcinfo -u localhost nfs > /dev/null 2>&1; do \
-			sleep 0.5; \
-		done; \
-	else \
-		echo "It seems your first run for xhyve with vmnet."; \
-		echo "You can't use NFS shared folder at this time."; \
-		echo "But it should be available at the next boot."; \
-	fi;
-
-exports-clean:
-	@if [ -n "$(EXPORTS)" ]; then \
-		sudo touch /etc/exports; \
-		sudo sed -E -e '/^\$(EXPORTS)$$/d' -i.bak /etc/exports; \
-		sudo nfsd restart; \
-	fi;
-
-.PHONY: exports exports-clean
 
 uuid2mac: bin/uuid2mac
 

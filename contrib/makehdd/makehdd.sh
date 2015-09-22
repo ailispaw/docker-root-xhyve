@@ -27,11 +27,18 @@ EOF
 cat <<EOF > ${MNT}/var/lib/docker-root/start.sh
 #!/bin/sh
 
-mkdir -p /Users
-umount /Users
+if cat /proc/cmdline | grep "docker-root.nfsroot=" >/dev/null; then
+  NFS_ROOT=\$(cat /proc/cmdline | sed 's/.*docker-root.nfsroot="\(.*\)".*/\1/')
+fi
+NFS_ROOT=\${NFS_ROOT:-/Users}
+
+MOUNT_POINT=\${NFS_ROOT}
+
 GW_IP=\$(ip route get 8.8.8.8 | awk 'NR==1 {print \$3}')
 if [ -n "\${GW_IP}" ]; then
-  mount \${GW_IP}:/Users /Users -o rw,async,noatime,rsize=32768,wsize=32768,nolock,vers=3
+  mkdir -p \${MOUNT_POINT}
+  umount \${MOUNT_POINT}
+  mount "\${GW_IP}:\${NFS_ROOT}" \${MOUNT_POINT} -o rw,async,noatime,rsize=32768,wsize=32768,nolock,vers=3
 fi
 EOF
 chmod +x ${MNT}/var/lib/docker-root/start.sh

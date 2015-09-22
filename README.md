@@ -9,7 +9,7 @@ For VirtualBox or QEMU, see https://github.com/ailispaw/docker-root-packer.
 - [DockerRoot](https://github.com/ailispaw/docker-root)
 - Disable TLS
 - Expose the official IANA registered Docker port 2375
-- Support NFS synced folder: /Users is NFS-mounted on the DockerRoot VM.
+- Support NFS synced folder: $HOME is NFS-mounted on the DockerRoot VM.
 
 ## Requirements
 

@@ -39,8 +39,8 @@ Units = cylinders of 2048 * 512 = 1048576 bytes
 Partition table entries are not in disk order
 [docker@docker-root ~]$ ls -l /mnt/vda1/var/lib/docker-root
 total 8
--rw-r--r--    1 root     root            47 Aug  9 20:58 profile
--rwxr-xr-x    1 root     root           215 Aug  9 20:58 start.sh*
+-rw-r--r--    1 root     root            47 Oct 11 19:19 profile
+-rwxr-xr-x    1 root     root           455 Oct 11 19:19 start.sh*
 [docker@docker-root ~]$ sudo halt
 halt[247]: Executing shutdown scripts in /etc/init.d
 Saving random seed... done.

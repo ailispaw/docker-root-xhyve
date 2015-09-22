@@ -1,5 +1,7 @@
 #!/bin/sh
 
+NFS_ROOT="${1:-/Users}"
+
 VMNET="/Library/Preferences/SystemConfiguration/com.apple.vmnet"
 if [ ! -f "${VMNET}.plist" ]; then
   exit
@@ -23,4 +25,4 @@ function num2ip() {
 NET_NUM=$(( $(ip2num ${IP_ADDR}) & $(ip2num ${NET_MASK}) ))
 NET_ADDR=$(num2ip ${NET_NUM})
 
-echo "/Users -network ${NET_ADDR} -mask ${NET_MASK} -alldirs -mapall=$(id -u $SUDO_USER):$(id -g $SUDO_USER)"
+echo "\"${NFS_ROOT}\" -network ${NET_ADDR} -mask ${NET_MASK} -alldirs -mapall=$(id -u $SUDO_USER):$(id -g $SUDO_USER)"
