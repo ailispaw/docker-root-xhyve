@@ -85,7 +85,11 @@ exports:
 		if ! grep -qs '^$(EXPORTS)$$' /etc/exports; then \
 			echo '$(EXPORTS)' | sudo tee -a /etc/exports; \
 		fi; \
-		sudo nfsd restart; \
+		sudo nfsd stop; \
+		sudo nfsd start; \
+		while ! rpcinfo -u localhost nfs > /dev/null 2>&1; do \
+			sleep 0.5; \
+		done; \
 	else \
 		echo "It seems your first run for xhyve with vmnet."; \
 		echo "You can't use NFS shared folder at this time."; \
