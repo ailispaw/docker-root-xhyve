@@ -78,7 +78,7 @@ docker-root login:
 $ make ssh
 docker-root-xhyve: running on 192.168.64.2
 docker@192.168.64.2's password: 
-Welcome to DockerRoot version 1.0.4, Docker version 1.8.2, build 0a8c2e3
+Welcome to DockerRoot version 1.0.5, Docker version 1.8.2, build 0a8c2e3
 [docker@docker-root ~]$ 
 ```
 
@@ -125,16 +125,16 @@ Storage Driver: overlay
  Backing Filesystem: extfs
 Execution Driver: native-0.2
 Logging Driver: json-file
-Kernel Version: 4.1.8-docker-root
-Operating System: DockerRoot v1.0.4
+Kernel Version: 4.1.9-docker-root
+Operating System: DockerRoot v1.0.5
 CPUs: 1
 Total Memory: 1000 MiB
 Name: docker-root
-ID: UYTD:YGFH:3LRG:ETDP:NBHC:PMSO:F24F:RJ2Z:XRSX:YFRZ:KUGC:MTF5
+ID: FQNK:UE6C:GCUK:TA63:5Y6N:C7RS:JVCA:UL2O:OQ44:U4V3:FEAG:IM2A
 Debug mode (server): true
 File Descriptors: 14
 Goroutines: 16
-System Time: 2015-09-22T00:38:50.626602126Z
+System Time: 2015-09-30T01:10:18.0416664Z
 EventsListeners: 0
 Init SHA1:
 Init Path: /bin/docker
