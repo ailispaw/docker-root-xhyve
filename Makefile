@@ -81,10 +81,12 @@ EXPORTS = $(shell bin/vmnet_export.sh)
 
 exports:
 	@if [ -n "$(EXPORTS)" ]; then \
+		set -e; \
 		sudo touch /etc/exports; \
 		if ! grep -qs '^$(EXPORTS)$$' /etc/exports; then \
 			echo '$(EXPORTS)' | sudo tee -a /etc/exports; \
 		fi; \
+		sudo nfsd checkexports || (echo "Please check your /etc/exports." >&2 && exit 1); \
 		sudo nfsd stop; \
 		sudo nfsd start; \
 		while ! rpcinfo -u localhost nfs > /dev/null 2>&1; do \

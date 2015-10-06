@@ -28,7 +28,7 @@ if [ -n "${UUID}" ]; then
   UUID="-U ${UUID}"
 fi
 
-make exports
+make exports || exit 1
 
 while [ 1 ]; do
   xhyve $ACPI $MEM $SMP $PCI_DEV $LPC_DEV $NET $IMG_CD $IMG_HDD $UUID -f kexec,$KERNEL,$INITRD,"$CMDLINE"
