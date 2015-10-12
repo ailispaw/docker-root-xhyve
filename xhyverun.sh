@@ -32,18 +32,18 @@ fi
 
 EXPORTS=$(bin/vmnet_export.sh "${NFS_ROOT}")
 if [ -n "${EXPORTS}" ]; then
+  set -e
   sudo touch /etc/exports
   if ! grep -qs "^${EXPORTS}$" /etc/exports; then
-    set -e
     echo "${EXPORTS}" | sudo tee -a /etc/exports
-    sudo nfsd checkexports || (echo "Please check your /etc/exports." >&2 && exit 1)
-    sudo nfsd stop
-    sudo nfsd start
-    while ! rpcinfo -u localhost nfs > /dev/null 2>&1; do
-      sleep 0.5
-    done
-    set +e
   fi
+  sudo nfsd checkexports || (echo "Please check your /etc/exports." >&2 && exit 1)
+  sudo nfsd stop
+  sudo nfsd start
+  while ! rpcinfo -u localhost nfs > /dev/null 2>&1; do
+    sleep 0.5
+  done
+  set +e
 else
   echo "It seems your first run for xhyve with vmnet."
   echo "You can't use NFS shared folder at this time."
