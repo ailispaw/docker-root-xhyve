@@ -50,6 +50,7 @@ else
   echo "But it should be available at the next boot."
 fi
 
+echo "Starting DockerRoot VM"
 while [ 1 ]; do
   xhyve $ACPI $MEM $SMP $PCI_DEV $LPC_DEV $NET $IMG_CD $IMG_HDD $UUID -f kexec,$KERNEL,$INITRD,"$CMDLINE"
   if [ $? -ne 0 ]; then
