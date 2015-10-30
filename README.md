@@ -78,7 +78,7 @@ docker-root login:
 $ make ssh
 docker-root-xhyve: running on 192.168.64.2
 docker@192.168.64.2's password: 
-Welcome to DockerRoot version 1.0.8, Docker version 1.8.3, build f4bf5c7
+Welcome to DockerRoot version 1.1.0, Docker version 1.8.3, build f4bf5c7
 [docker@docker-root ~]$ 
 ```
 
@@ -88,9 +88,11 @@ Use `halt` command to shut down in the VM:
 
 ```
 [docker@docker-root ~]$ sudo halt
-halt[247]: Executing shutdown scripts in /etc/init.d
+halt[269]: Stopping Docker daemon
+docker[279]: Stopping Docker daemon
+halt[269]: Executing shutdown scripts in /etc/init.d
 Saving random seed... done.
-halt[247]: halt
+halt[269]: halt
 [docker@docker-root ~]$ reboot: System halted
 $ 
 ```
@@ -100,10 +102,12 @@ or, use `make halt` on the host:
 ```
 $ make halt
 docker-root-xhyve: running on 192.168.64.2
-docker@192.168.64.2's password: 
-halt[247]: Executing shutdown scripts in /etc/init.d
+docker@192.168.64.2's password:
+halt[259]: Stopping Docker daemon
+docker[270]: Stopping Docker daemon
+halt[259]: Executing shutdown scripts in /etc/init.d
 Saving random seed... done.
-halt[247]: halt
+halt[259]: halt
 Connection to 192.168.64.2 closed by remote host.
 Shutting down...
 ```
@@ -142,16 +146,16 @@ Storage Driver: overlay
  Backing Filesystem: extfs
 Execution Driver: native-0.2
 Logging Driver: json-file
-Kernel Version: 4.1.11-docker-root
-Operating System: DockerRoot v1.0.8
+Kernel Version: 4.1.12-docker-root
+Operating System: DockerRoot v1.1.0
 CPUs: 1
 Total Memory: 999.9 MiB
 Name: docker-root
-ID: KBVA:45H7:LU36:OLHX:LJQY:QKQ7:G5CP:KXXJ:AXOH:GUUO:UCBL:KVJA
+ID: Y6ZW:EPHF:GYPP:EYIM:2ATJ:IYXO:O752:6HLL:GVMZ:ORW7:TOHU:J3ZG
 Debug mode (server): true
 File Descriptors: 14
 Goroutines: 16
-System Time: 2015-10-23T02:31:39.357387284Z
+System Time: 2015-10-30T17:25:29.960956975Z
 EventsListeners: 0
 Init SHA1:
 Init Path: /bin/docker

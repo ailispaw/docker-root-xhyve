@@ -14,7 +14,7 @@ $(KERNEL) $(INITRD): docker-root.iso
 	hdiutil unmount /Volumes/DOCKER_ROOT
 
 docker-root.iso:
-	curl -OL https://github.com/ailispaw/docker-root/releases/download/v1.0.8/$@
+	curl -OL https://github.com/ailispaw/docker-root/releases/download/v1.1.0/$@
 
 $(HDD): docker-root-data.tar.gz
 	tar zxmvf $<
