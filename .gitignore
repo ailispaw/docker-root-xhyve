@@ -4,3 +4,5 @@ uuid2mac/build/
 bin/uuid2mac
 vm/*
 !vm/Makefile
+
+.ssh/
