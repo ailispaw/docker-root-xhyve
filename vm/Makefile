@@ -1,6 +1,7 @@
 KERNEL   := bzImage
 INITRD   := initrd
 CMDLINE  := earlyprintk=serial console=ttyS0 console=tty0 quiet loglevel=3
+ISO      := docker-root.iso
 HDD      := docker-root-data.img
 UUID     := A01FB25C-3A19-4759-A47A-2E353E51807D
 USERNAME := docker
@@ -8,12 +9,16 @@ PASSWORD := docker
 
 all: $(KERNEL) $(INITRD) $(HDD)
 
-$(KERNEL) $(INITRD): docker-root.iso
-	hdiutil mount docker-root.iso
+upgrade: 
+	$(RM) $(ISO)
+	$(MAKE)
+
+$(KERNEL) $(INITRD): $(ISO)
+	hdiutil mount $(ISO)
 	cp /Volumes/DOCKER_ROOT/boot/$@ . && sync
 	hdiutil unmount /Volumes/DOCKER_ROOT
 
-docker-root.iso:
+$(ISO):
 	curl -OL https://github.com/ailispaw/docker-root/releases/download/v1.1.1/$@
 
 $(HDD): docker-root-data.tar.gz
@@ -48,8 +53,8 @@ ssh_args:
 
 clean:
 	$(RM) $(KERNEL) $(INITRD) $(HDD)
-	$(RM) docker-root.iso docker-root-data.tar.gz
+	$(RM) $(ISO) docker-root-data.tar.gz
 	$(RM) .mac_address
 
-.PHONY: all xhyve_uuid xhyve_kernel xhyve_cmdline xhyve_hdd \
+.PHONY: all upgrade xhyve_uuid xhyve_kernel xhyve_cmdline xhyve_hdd \
 	username password ssh_args clean

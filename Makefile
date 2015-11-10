@@ -3,10 +3,13 @@ init: vm uuid2mac
 vm:
 	@$(MAKE) -sC vm
 
+upgrade:
+	@$(MAKE) -C vm upgrade
+
 clean destroy: uuid2mac-clean
 	$(MAKE) -C vm clean
 
-.PHONY: init vm clean destroy
+.PHONY: init vm upgrade clean destroy
 
 #
 # Commands
