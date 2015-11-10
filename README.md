@@ -78,7 +78,7 @@ docker-root login:
 $ make ssh
 docker-root-xhyve: running on 192.168.64.2
 docker@192.168.64.2's password: 
-Welcome to DockerRoot version 1.1.1, Docker version 1.9.0, build 76d6bc9
+Welcome to DockerRoot version 1.1.2, Docker version 1.9.0, build 76d6bc9
 [docker@docker-root ~]$ 
 ```
 
@@ -142,24 +142,25 @@ docker-root-xhyve: running on 192.168.64.2
 $ docker info
 Containers: 0
 Images: 0
+Server Version: 1.9.0
 Storage Driver: overlay
  Backing Filesystem: extfs
 Execution Driver: native-0.2
 Logging Driver: json-file
-Kernel Version: 4.1.12-docker-root
-Operating System: DockerRoot v1.1.1
+Kernel Version: 4.1.13-docker-root
+Operating System: DockerRoot v1.1.2
 CPUs: 1
 Total Memory: 999.9 MiB
 Name: docker-root
-ID: 4ND2:X3K6:X7RF:O5ML:6RSY:63TP:HK2E:BMPC:V5VZ:T2K4:KMHJ:4XKD
+ID: IERW:NYK3:5HAU:XGDT:2HVY:HJAC:R5VP:CQIR:FJS2:ZJPX:MVBE:LL44
 Debug mode (server): true
-File Descriptors: 12
-Goroutines: 18
-System Time: 2015-11-03T22:09:17.432726445Z
-EventsListeners: 0
-Init SHA1:
-Init Path: /bin/docker
-Docker Root Dir: /mnt/vda1/var/lib/docker
+ File Descriptors: 12
+ Goroutines: 18
+ System Time: 2015-11-10T01:37:00.675106836Z
+ EventsListeners: 0
+ Init SHA1:
+ Init Path: /bin/docker
+ Docker Root Dir: /mnt/vda1/var/lib/docker
 ```
 
 ## Upgrading DockerRoot
