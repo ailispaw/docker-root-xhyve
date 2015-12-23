@@ -74,7 +74,7 @@ status:
 version: | status
 	@make ssh cat /etc/os-release 2>/dev/null | sed -n 's/^VERSION=\(.*\)$$/v\1/p'
 
-.PHONY: run up mac ip ssh halt reboot reload env status
+.PHONY: run up mac ip ssh halt reboot reload env status version
 
 .DEFAULT:
 	@:
