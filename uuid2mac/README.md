@@ -1,8 +1,8 @@
 # Get Mac Address and IP Address from UUID
 
-License: BSD as well as [xhybe](https://github.com/mist64/xhyve)
+License: BSD as well as [xhyve](https://github.com/mist64/xhyve)
 
-config.mk and uuid.h are from xhybe and most of main.c is from xhyve, too.
+config.mk and uuid.h are from xhyve and most of main.c is from xhyve, too.
 
 ```
 $ git clone https://github.com/ailispaw/docker-root-xhyve
