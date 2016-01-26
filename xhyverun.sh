@@ -1,5 +1,14 @@
 #!/bin/sh
 
+VBOX_VERSION=$(VBoxManage --version 2> /dev/null)
+if [ -n "${VBOX_VERSION}" ]; then
+  VBOX_VERSION=($(echo ${VBOX_VERSION} | tr -s '.' ' '))
+  if [[ ${VBOX_VERSION[0]} -lt 5 ]]; then
+    echo "Abort: KERNEL PANIC would occur with VirtualBox (< v5.0)." >&2
+    exit 1
+  fi
+fi
+
 NFS_ROOT="${1:-$HOME}"
 
 KERNEL=$(make -C vm xhyve_kernel)
