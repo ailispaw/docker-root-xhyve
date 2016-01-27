@@ -9,7 +9,7 @@ if [ -n "${VBOX_VERSION}" ]; then
   fi
 fi
 
-NFS_ROOT="${1:-$HOME}"
+: ${NFS_ROOT:="${1:-$HOME}"}
 
 KERNEL=$(make -C vm xhyve_kernel)
 INITRD=$(make -C vm xhyve_initrd)

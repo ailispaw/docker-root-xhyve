@@ -1,6 +1,6 @@
 #!/bin/sh
 
-CMD="cd '$(pwd)'; sudo ./xhyverun.sh && exit"
+CMD="cd '$(pwd)'; sudo ./xhyverun.sh \\\"${1}\\\" && exit"
 
 if [ "${TERM_PROGRAM}" = "Apple_Terminal" ] ; then
   osascript <<END

@@ -22,7 +22,7 @@ SSH_ARGS := $(shell make -sC vm ssh_args)
 
 run up: | init
 	@sudo echo "Booting up..." # to input password at the current window in advance 
-	@bin/xhyveexec.sh
+	@bin/xhyveexec.sh "$(NFS_ROOT)"
 
 mac: | status
 	@cat vm/.mac_address
