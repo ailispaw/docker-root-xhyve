@@ -27,10 +27,8 @@ EOF
 cat <<EOF > ${MNT}/var/lib/docker-root/start.sh
 #!/bin/sh
 
-if cat /proc/cmdline | grep "docker-root.nfsroot=" >/dev/null; then
-  NFS_ROOT=\$(cat /proc/cmdline | sed 's/.*docker-root.nfsroot="\(.*\)".*/\1/')
-fi
-NFS_ROOT=\${NFS_ROOT:-/Users}
+NFS_ROOT=\$(cat /proc/cmdline | sed -n 's/^.*docker-root.nfsroot="\([^"]\+\)".*\$/\1/p')
+: \${NFS_ROOT:="/Users"}
 
 MOUNT_POINT=\${NFS_ROOT}
 
