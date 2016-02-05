@@ -13,7 +13,7 @@ For VirtualBox or QEMU, see https://github.com/ailispaw/docker-root-packer.
 
 ## Requirements
 
-- [xhyve](https://github.com/mist64/xhyve)
+- [xhyve with lib9p](https://github.com/jceel/xhyve)
   - Mac OS X Yosemite 10.10.3 or later
   - A 2010 or later Mac (i.e. a CPU that supports EPT)
 
@@ -25,16 +25,10 @@ For VirtualBox or QEMU, see https://github.com/ailispaw/docker-root-packer.
 ## Installing xhyve
 
 ```
-$ git clone https://github.com/mist64/xhyve
+$ git clone https://github.com/jceel/xhyve
 $ cd xhyve
 $ make
 $ cp build/xhyve /usr/local/bin/    # You may require sudo
-```
-
-or
-
-```
-$ brew install xhyve
 ```
 
 ## Setting up DockerRoot images and tools
