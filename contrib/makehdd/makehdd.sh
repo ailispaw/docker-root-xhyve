@@ -32,11 +32,11 @@ SHARED_FOLDER=\$(cat /proc/cmdline | sed -n 's/^.*docker-root.shared_folder="\([
 
 MOUNT_POINT=\${SHARED_FOLDER}
 
-GW_IP=\$(ip route get 8.8.8.8 | awk 'NR==1 {print \$3}')
-if [ -n "\${GW_IP}" ]; then
+VIRTFS_UNAME=\$(cat /proc/cmdline | sed -n 's/^.*docker-root.virtfs_uname=\([^ ]\+\).*\$/\1/p')
+if [ -n "\${VIRTFS_UNAME}" ];then
   mkdir -p "\${MOUNT_POINT}"
   umount "\${MOUNT_POINT}"
-  mount "\${GW_IP}:\${SHARED_FOLDER}" "\${MOUNT_POINT}" -o rw,async,noatime,rsize=32768,wsize=32768,nolock,vers=3
+  mount -t 9p -o version=9p2000,trans=virtio,access=any,uname=\${VIRTFS_UNAME},dfltuid=\$(id -u docker),dfltgid=\$(id -g docker) host "\${MOUNT_POINT}"
 fi
 EOF
 chmod +x ${MNT}/var/lib/docker-root/start.sh

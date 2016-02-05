@@ -25,16 +25,10 @@ For VirtualBox or QEMU, see https://github.com/ailispaw/docker-root-packer.
 ## Installing xhyve
 
 ```
-$ git clone https://github.com/mist64/xhyve
+$ git clone https://github.com/jceel/xhyve
 $ cd xhyve
 $ make
 $ cp build/xhyve /usr/local/bin/    # You may require sudo
-```
-
-or
-
-```
-$ brew install xhyve
 ```
 
 ## Setting up DockerRoot images and tools
@@ -78,7 +72,7 @@ docker-root login:
 $ make ssh
 docker-root-xhyve: running on 192.168.64.2
 docker@192.168.64.2's password: 
-Welcome to DockerRoot version 1.2.11, Docker version 1.9.1, build 66c06d0-stripped
+Welcome to DockerRoot version 1.3.0, Docker version 1.9.1, build 66c06d0-stripped
 [docker@docker-root ~]$ 
 ```
 
@@ -147,16 +141,16 @@ Storage Driver: overlay
  Backing Filesystem: extfs
 Execution Driver: native-0.2
 Logging Driver: json-file
-Kernel Version: 4.3.5-docker-root
-Operating System: DockerRoot v1.2.11
+Kernel Version: 4.4.1-docker-root
+Operating System: DockerRoot v1.3.0
 CPUs: 1
 Total Memory: 999.5 MiB
 Name: docker-root
-ID: TD4G:W4CN:J4R2:56WJ:PZZG:RXN4:FQEV:WWIE:BIIC:N3RQ:MI6R:BYQ7
+ID: KRCL:4BQR:7BNW:4VNC:3EED:5VDR:IK2F:FG65:ESGP:YBSK:VHVJ:OHOX
 Debug mode (server): true
  File Descriptors: 12
  Goroutines: 18
- System Time: 2016-02-01T00:22:38.550810129Z
+ System Time: 2016-02-05T08:06:31.382483241Z
  EventsListeners: 0
  Init SHA1:
  Init Path: /usr/bin/docker
