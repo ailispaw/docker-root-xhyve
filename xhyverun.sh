@@ -9,11 +9,11 @@ if [ -n "${VBOX_VERSION}" ]; then
   fi
 fi
 
-: ${NFS_ROOT:="${1:-$HOME}"}
+: ${SHARED_FOLDER:="${1:-$HOME}"}
 
 KERNEL=$(make -C vm xhyve_kernel)
 INITRD=$(make -C vm xhyve_initrd)
-CMDLINE="$(make -C vm xhyve_cmdline) docker-root.nfsroot=\"${NFS_ROOT}\""
+CMDLINE="$(make -C vm xhyve_cmdline) docker-root.shared_folder=\"${SHARED_FOLDER}\""
 HDD=$(make -C vm xhyve_hdd)
 UUID=$(make -C vm xhyve_uuid)
 
@@ -39,7 +39,7 @@ if [ -n "${UUID}" ]; then
   UUID="-U ${UUID}"
 fi
 
-EXPORTS=$(bin/vmnet_export.sh "${NFS_ROOT}")
+EXPORTS=$(bin/vmnet_export.sh "${SHARED_FOLDER}")
 if [ -n "${EXPORTS}" ]; then
   set -e
   sudo touch /etc/exports

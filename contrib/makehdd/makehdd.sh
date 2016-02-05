@@ -27,18 +27,16 @@ EOF
 cat <<EOF > ${MNT}/var/lib/docker-root/start.sh
 #!/bin/sh
 
-if cat /proc/cmdline | grep "docker-root.nfsroot=" >/dev/null; then
-  NFS_ROOT=\$(cat /proc/cmdline | sed 's/.*docker-root.nfsroot="\(.*\)".*/\1/')
-fi
-NFS_ROOT=\${NFS_ROOT:-/Users}
+SHARED_FOLDER=\$(cat /proc/cmdline | sed -n 's/^.*docker-root.shared_folder="\([^"]\+\)".*\$/\1/p')
+: \${SHARED_FOLDER:="/Users"}
 
-MOUNT_POINT=\${NFS_ROOT}
+MOUNT_POINT=\${SHARED_FOLDER}
 
 GW_IP=\$(ip route get 8.8.8.8 | awk 'NR==1 {print \$3}')
 if [ -n "\${GW_IP}" ]; then
   mkdir -p "\${MOUNT_POINT}"
   umount "\${MOUNT_POINT}"
-  mount "\${GW_IP}:\${NFS_ROOT}" "\${MOUNT_POINT}" -o rw,async,noatime,rsize=32768,wsize=32768,nolock,vers=3
+  mount "\${GW_IP}:\${SHARED_FOLDER}" "\${MOUNT_POINT}" -o rw,async,noatime,rsize=32768,wsize=32768,nolock,vers=3
 fi
 EOF
 chmod +x ${MNT}/var/lib/docker-root/start.sh
