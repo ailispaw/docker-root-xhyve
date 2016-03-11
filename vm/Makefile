@@ -1,6 +1,6 @@
 KERNEL   := bzImage
 INITRD   := initrd
-CMDLINE  := earlyprintk=serial console=ttyS0 console=tty0 quiet loglevel=3
+CMDLINE  := earlyprintk=serial console=ttyS0 console=tty0 quiet loglevel=3 docker-root.switch_root
 ISO      := docker-root.iso
 HDD      := docker-root-data.img
 UUID     := A01FB25C-3A19-4759-A47A-2E353E51807D
@@ -19,7 +19,7 @@ $(KERNEL) $(INITRD): $(ISO)
 	hdiutil unmount /Volumes/DOCKER_ROOT
 
 $(ISO):
-	curl -OL https://github.com/ailispaw/docker-root/releases/download/v1.3.1/$@
+	curl -OL https://github.com/ailispaw/docker-root/releases/download/v1.3.2/$@
 
 $(HDD): docker-root-data.tar.gz
 	tar zxmvf $<
