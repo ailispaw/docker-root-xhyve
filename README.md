@@ -82,11 +82,12 @@ Use `halt` command to shut down in the VM:
 
 ```
 [docker@docker-root ~]$ sudo halt
-halt[269]: Stopping Docker daemon
-docker[279]: Stopping Docker daemon
-halt[269]: Executing shutdown scripts in /etc/init.d
+halt[310]: Stopping Docker daemon
+docker[314]: Stopping Docker daemon
+halt[310]: Executing shutdown scripts in /etc/init.d
+Stopping crond... OK
 Saving random seed... done.
-halt[269]: halt
+halt[310]: halt
 [docker@docker-root ~]$ reboot: System halted
 $ 
 ```
@@ -97,11 +98,12 @@ or, use `make halt` on the host:
 $ make halt
 docker-root-xhyve: running on 192.168.64.2
 docker@192.168.64.2's password:
-halt[259]: Stopping Docker daemon
-docker[270]: Stopping Docker daemon
-halt[259]: Executing shutdown scripts in /etc/init.d
+halt[311]: Stopping Docker daemon
+docker[315]: Stopping Docker daemon
+halt[311]: Executing shutdown scripts in /etc/init.d
+Stopping crond... OK
 Saving random seed... done.
-halt[259]: halt
+halt[311]: halt
 Connection to 192.168.64.2 closed by remote host.
 Shutting down...
 ```
