@@ -78,7 +78,7 @@ docker-root login:
 $ make ssh
 docker-root-xhyve: running on 192.168.64.2
 docker@192.168.64.2's password: 
-Welcome to DockerRoot version 1.3.3, Docker version 1.9.1, build 66c06d0-stripped
+Welcome to DockerRoot version 1.3.4, Docker version 1.9.1, build 66c06d0-stripped
 [docker@docker-root ~]$ 
 ```
 
@@ -88,12 +88,13 @@ Use `halt` command to shut down in the VM:
 
 ```
 [docker@docker-root ~]$ sudo halt
-halt[310]: Stopping Docker daemon
-docker[314]: Stopping Docker daemon
-halt[310]: Executing shutdown scripts in /etc/init.d
+halt[318]: Stopping Docker daemon
+docker[322]: Loading /var/lib/docker-root/profile
+docker[322]: Stopping Docker daemon
+halt[318]: Executing shutdown scripts in /etc/init.d
 Stopping crond... OK
 Saving random seed... done.
-halt[310]: halt
+halt[318]: halt
 [docker@docker-root ~]$ reboot: System halted
 $ 
 ```
@@ -104,12 +105,13 @@ or, use `make halt` on the host:
 $ make halt
 docker-root-xhyve: running on 192.168.64.2
 docker@192.168.64.2's password:
-halt[311]: Stopping Docker daemon
-docker[315]: Stopping Docker daemon
-halt[311]: Executing shutdown scripts in /etc/init.d
+halt[312]: Stopping Docker daemon
+docker[316]: Loading /var/lib/docker-root/profile
+docker[316]: Stopping Docker daemon
+halt[312]: Executing shutdown scripts in /etc/init.d
 Stopping crond... OK
 Saving random seed... done.
-halt[311]: halt
+halt[312]: halt
 Connection to 192.168.64.2 closed by remote host.
 Shutting down...
 ```
@@ -149,16 +151,16 @@ Storage Driver: overlay
  Backing Filesystem: extfs
 Execution Driver: native-0.2
 Logging Driver: json-file
-Kernel Version: 4.4.5-docker-root
-Operating System: DockerRoot v1.3.3
+Kernel Version: 4.4.6-docker-root
+Operating System: DockerRoot v1.3.4
 CPUs: 1
 Total Memory: 999.4 MiB
 Name: docker-root
-ID: 2O35:7LCJ:YETY:2SZJ:CR4Z:PSFD:7UH7:VJ5T:6RGE:67LX:ZBR7:IZTR
+ID: TLMM:WJCX:SQFH:W4KQ:247M:I43C:7KPS:KSCU:7TCK:HBXJ:M5TM:RMMF
 Debug mode (server): true
  File Descriptors: 12
  Goroutines: 18
- System Time: 2016-03-12T13:49:01.678692416Z
+ System Time: 2016-03-17T02:45:06.167352533Z
  EventsListeners: 0
  Init SHA1:
  Init Path: /opt/bin/docker
