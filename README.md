@@ -34,9 +34,8 @@ $ cp build/xhyve /usr/local/bin/    # You may require sudo
 ## Setting up DockerRoot images and tools
 
 ```
-$ git clone https://github.com/ailispaw/docker-root-xhyve
+$ git clone -b virtfs https://github.com/ailispaw/docker-root-xhyve
 $ cd docker-root-xhyve
-$ git checkout virtfs
 $ make init
 ```
 
