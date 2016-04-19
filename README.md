@@ -72,7 +72,7 @@ docker-root login:
 $ make ssh
 docker-root-xhyve: running on 192.168.64.2
 docker@192.168.64.2's password: 
-Welcome to DockerRoot version 1.3.8, Docker version 1.9.1, build 66c06d0-stripped
+Welcome to DockerRoot version 1.3.9, Docker version 1.9.1, build 66c06d0-stripped
 [docker@docker-root ~]$ 
 ```
 
@@ -82,13 +82,14 @@ Use `halt` command to shut down in the VM:
 
 ```
 [docker@docker-root ~]$ sudo halt
-halt[318]: Stopping Docker daemon
-docker[322]: Loading /var/lib/docker-root/profile
-docker[322]: Stopping Docker daemon
-halt[318]: Executing shutdown scripts in /etc/init.d
+halt[316]: Stopping Docker daemon
+docker[320]: Loading /var/lib/docker-root/profile
+docker[320]: Stopping Docker daemon
+halt[316]: Executing shutdown scripts in /etc/init.d
 Stopping crond... OK
+Stopping sshd... OK
 Saving random seed... done.
-halt[318]: halt
+halt[316]: halt
 [docker@docker-root ~]$ reboot: System halted
 $ 
 ```
@@ -99,13 +100,14 @@ or, use `make halt` on the host:
 $ make halt
 docker-root-xhyve: running on 192.168.64.2
 docker@192.168.64.2's password:
-halt[312]: Stopping Docker daemon
-docker[316]: Loading /var/lib/docker-root/profile
-docker[316]: Stopping Docker daemon
-halt[312]: Executing shutdown scripts in /etc/init.d
+halt[317]: Stopping Docker daemon
+docker[321]: Loading /var/lib/docker-root/profile
+docker[321]: Stopping Docker daemon
+halt[317]: Executing shutdown scripts in /etc/init.d
 Stopping crond... OK
+Stopping sshd... OK
 Saving random seed... done.
-halt[312]: halt
+halt[317]: halt
 Connection to 192.168.64.2 closed by remote host.
 Shutting down...
 ```
@@ -146,15 +148,15 @@ Storage Driver: overlay
 Execution Driver: native-0.2
 Logging Driver: json-file
 Kernel Version: 4.4.7-docker-root
-Operating System: DockerRoot v1.3.8
+Operating System: DockerRoot v1.3.9
 CPUs: 1
 Total Memory: 999.4 MiB
 Name: docker-root
-ID: BTC6:FTQ2:ZBP5:HX4W:BB2X:CZOO:QT27:E4P7:I477:IRNP:ZH3F:AS55
+ID: NE3K:QKTD:VOTQ:VE2S:T2Z7:MP35:7A5U:7YO4:EX4K:SHSE:EOMF:MZG3
 Debug mode (server): true
  File Descriptors: 12
  Goroutines: 18
- System Time: 2016-04-12T20:31:07.926514653Z
+ System Time: 2016-04-19T16:18:41.763519836Z
  EventsListeners: 0
  Init SHA1:
  Init Path: /opt/bin/docker

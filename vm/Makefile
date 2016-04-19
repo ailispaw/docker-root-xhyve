@@ -19,13 +19,13 @@ $(KERNEL) $(INITRD): $(ISO)
 	hdiutil unmount /Volumes/DOCKER_ROOT
 
 $(ISO):
-	curl -OL https://github.com/ailispaw/docker-root/releases/download/v1.3.8/$@
+	curl -OL https://github.com/ailispaw/docker-root/releases/download/v1.3.9/$@
 
 $(HDD): docker-root-data.tar.gz
 	tar zxmvf $<
 
 docker-root-data.tar.gz:
-	curl -OL https://github.com/ailispaw/docker-root-xhyve/releases/download/v2.1.0/$@
+	curl -OL https://github.com/ailispaw/docker-root-xhyve/releases/download/v2.1.1/$@
 
 xhyve_uuid:
 	@echo $(UUID)
