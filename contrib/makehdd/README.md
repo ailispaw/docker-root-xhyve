@@ -22,7 +22,7 @@ $ sudo ./xhyverun.sh
 Welcome to DockerRoot docker-root /dev/ttyS0
 docker-root login: docker
 Password: 
-Welcome to DockerRoot version 1.3.1, Docker version 1.9.1, build 66c06d0-stripped
+Welcome to DockerRoot version 1.3.9, Docker version 1.9.1, build 66c06d0-stripped
 [docker@docker-root ~]$ wget https://raw.githubusercontent.com/ailispaw/docker-root-xhyve/master/contrib/makehdd/makehdd.sh
 [docker@docker-root ~]$ chmod +x makehdd.sh
 [docker@docker-root ~]$ sudo ./makehdd.sh
@@ -42,12 +42,13 @@ total 8
 -rw-r--r--    1 root     root            47 Apr 19 16:06 profile
 -rwxr-xr-x    1 root     root          1127 Apr 19 16:06 start.sh*
 [docker@docker-root ~]$ sudo halt
-halt[266]: Stopping Docker daemon
-docker[277]: Stopping Docker daemon
-halt[266]: Executing shutdown scripts in /etc/init.d
+halt[301]: Stopping Docker daemon
+docker[305]: Stopping Docker daemon
+halt[301]: Executing shutdown scripts in /etc/init.d
 Stopping crond... OK
+Stopping sshd... OK
 Saving random seed... done.
-halt[266]: halt
+halt[301]: halt
 [docker@docker-root ~]$ reboot: System halted
 ```
 
