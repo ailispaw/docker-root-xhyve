@@ -47,7 +47,7 @@ if [ -n "\${SHARED_FOLDER}" ]; then
   fi
   if ! mountpoint -q "\${MOUNT_POINT}"; then
     if [ -n "\${GW_IP}" ]; then
-      mount "\${GW_IP}:\${MOUNT_POINT}" "\${MOUNT_POINT}" -o rw,async,noatime,rsize=32768,wsize=32768,nolock,vers=3
+      mount "\${GW_IP}:\${MOUNT_POINT}" "\${MOUNT_POINT}" -o rw,async,noatime,rsize=32768,wsize=32768,nolock,vers=3,udp,actimeo=1
     fi
   fi
 fi
