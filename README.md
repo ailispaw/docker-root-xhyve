@@ -178,6 +178,7 @@ $ git pull origin master
 $ make upgrade
 $ make up
 $ make ssh
+[docker@docker-root ~]$ sudo cp /var/lib/docker-root/start.sh /var/lib/docker-root/start.old
 [docker@docker-root ~]$ sudo wget -qO /var/lib/docker-root/start.sh https://raw.githubusercontent.com/ailispaw/docker-root-xhyve/master/contrib/configs/start.sh
 [docker@docker-root ~]$ sudo chmod +x /var/lib/docker-root/start.sh
 [docker@docker-root ~]$ sudo reboot
