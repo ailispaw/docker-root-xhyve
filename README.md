@@ -176,6 +176,11 @@ When DockerRoot is upgraded and docker-root-xhyve is updated,
 ```
 $ git pull origin master
 $ make upgrade
+$ make up
+$ make ssh
+[docker@docker-root ~]$ sudo wget -qO /var/lib/docker-root/start.sh https://raw.githubusercontent.com/ailispaw/docker-root-xhyve/master/contrib/makehdd/start.sh
+[docker@docker-root ~]$ sudo chmod +x /var/lib/docker-root/start.sh
+[docker@docker-root ~]$ sudo reboot
 ```
 
 ## Resources
