@@ -48,7 +48,7 @@ $ make init
 ## Booting Up
 
 ```
-$ sudo ./xhyverun.sh
+$ sudo ./xhyverun.sh [<dir>]
 
 Welcome to DockerRoot docker-root /dev/ttyS0
 docker-root login: 
@@ -57,7 +57,7 @@ docker-root login:
 or
 
 ```
-$ make up    # You may be asked for your sudo password
+$ [SHARED_FOLDER=<dir>] make up    # You may be asked for your sudo password
 Booting up...
 ```
 
